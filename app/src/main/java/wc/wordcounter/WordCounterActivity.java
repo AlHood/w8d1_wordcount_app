@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class WordCounterActivity extends AppCompatActivity {
 
     EditText paragraphEditText;
@@ -15,6 +17,7 @@ public class WordCounterActivity extends AppCompatActivity {
 StringSplitter striSpli;
     int totalWords;
 String wordOutput;
+    ArrayList<String> oneline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +38,10 @@ String wordOutput;
 
 //        put paragraphEditText into your string splitter/word counter method
 //        output via response Text with interpolation
-
-       totalWords = StringSplitter.countWords(striSpli = new StringSplitter(paragraphEditText));
-        wordOutput = ("There are %d words in the paragraph entered", totalWords)
+        striSpli = new StringSplitter(paragraphEditText.getText().toString());
+oneline = striSpli.splitString();
+       totalWords = StringSplitter.countWords(oneline);
+        wordOutput = String.format("There are %d words in the paragraph entered", totalWords);
       responseText.setText(wordOutput);
 
 
