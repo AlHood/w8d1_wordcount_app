@@ -11,31 +11,36 @@
     tools:context="wc.wordcounter.WordCounterActivity">
 
 
-
     <EditText
         android:id="@+id/paragraph_edittext"
-        android:hint="enter text"
+        android:hint="@string/entertext"
         android:textSize="30dp"
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"  />
-
-    <Button
-        android:onClick="onCountButtonClicked"
-        android:id="@+id/count_btn"
-        android:text="countEmUp"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/response_text"
         android:textSize="30dp"
         android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/count_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="65dp" />
 
+    <Button
+        android:onClick="onCountButtonClicked"
+        android:id="@+id/count_btn"
+        android:text="@string/countEmUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="141dp" />
 
 
 </RelativeLayout>

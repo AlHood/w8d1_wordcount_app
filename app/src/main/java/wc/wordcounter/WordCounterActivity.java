@@ -45,9 +45,6 @@ oneline = striSpli.splitString();
       responseText.setText(wordOutput);
 
 
-
-
-
     }
 
 }

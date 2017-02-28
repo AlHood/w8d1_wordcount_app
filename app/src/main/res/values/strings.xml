@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WordCounter</string>
+    <string name="countEmUp">press me to count</string>
+    <string name="entertext">type your countable words here</string>
 </resources>
