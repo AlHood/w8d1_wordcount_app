@@ -1,5 +1,6 @@
 package wc.wordcounter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class WordCounterActivity extends AppCompatActivity {
     TextView responseText;
 StringSplitter striSpli;
     int totalWords;
-String wordOutput;
+String response;
     ArrayList<String> oneline;
 
     @Override
@@ -41,10 +42,16 @@ String wordOutput;
         striSpli = new StringSplitter(paragraphEditText.getText().toString());
 oneline = striSpli.splitString();
        totalWords = StringSplitter.countWords(oneline);
-        wordOutput = String.format("There are %d words in the paragraph entered", totalWords);
-      responseText.setText(wordOutput);
+        response = String.format("There are %d words in the paragraph entered", totalWords);
+
+     Intent intent = new Intent(WordCounterActivity.this, CounterOutputActivity.class);
+        intent.putExtra("response", response);
+        startActivity(intent);
+
 
 
     }
+
+
 
 }
